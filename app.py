@@ -87,7 +87,7 @@ Subject: {context.get("email_subject")}
         response = client.models.generate_content(
             model=MODEL_NAME,
             contents=[
-                types.Part.from_bytes(pdf_bytes, mime_type="application/pdf"),
+                types.Part.from_bytes(data=pdf_bytes, mime_type="application/pdf"),
                 prompt,
             ],
             config=types.GenerateContentConfig(
